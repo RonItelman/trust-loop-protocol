@@ -160,31 +160,7 @@ This approach provides significant advantages for enterprise environments:
 
 The visualization shows how even complex decision trees can be managed through simple, deterministic rules without requiring AI to interpret every user input or retrieve every database value.
 
-
-## Architecture Components
-
-TrustLoop implements a split-plane architecture that separates system components into distinct operational layers:
-
-### Control Plane
-- **Node.js Instance**: Runtime environment that executes JavaScript with JSON templates for HTML
-- **UI/Data State**: Components for managing user interface and data state
-- **Search Documents**: Interface for querying document collections
-- **Query Input**: Components for structured query input
-- **System Response**: Formatting and display of system responses
-
-### Data Plane
-- **CODE LIBRARIES**: Collection of JavaScript code used to handle pre-processing
-- **CONCEPT LIBRARIES**: Definition of terms providing semantic definitions
-- **RULES & TOOLS LIBRARIES**: Collections of policies used to identify and resolve ambiguities
-
-### Cognitive Plane
-- **Rule_APIS**: Interfaces for dynamically accessing and applying rules
-- **RegularExpressionExtractor**: Pattern matching to identify ambiguous terms
-- **CognitiveLoopManager**: Orchestrates the disambiguation workflow
-- **FacetsExtractor**: Applies the Four Facets Model to assess metadata completeness
-- **SemanticMapper**: Maps concepts across different representations
-
-# Introducing "TrustScores": The Four Facets Model (FFM)
+## Introducing "TrustScores": The Four Facets Model (FFM)
 
 The Four Facets Model provides a universal reference frame for measuring semantic consistency in AI-human interactions. It divides metadata into four distinct but interconnected aspects:
 
@@ -560,6 +536,30 @@ print(completeness_score)
 
 This approach allows organizations to objectively measure the completeness of their metadata across different systems, identify gaps, and track improvements over time.
 For more information on implementing certification standards or obtaining a TrustLoop assessment for your organization, contact us for consulting and evaluation services.
+
+
+## Enterprise / Architecture Component Compatibility
+
+TrustLoop implements a split-plane architecture that separates system components into distinct operational layers:
+
+### Control Plane
+- **Node.js Instance**: Runtime environment that executes JavaScript with JSON templates for HTML
+- **UI/Data State**: Components for managing user interface and data state
+- **Search Documents**: Interface for querying document collections
+- **Query Input**: Components for structured query input
+- **System Response**: Formatting and display of system responses
+
+### Data Plane
+- **CODE LIBRARIES**: Collection of JavaScript code used to handle pre-processing
+- **CONCEPT LIBRARIES**: Definition of terms providing semantic definitions
+- **RULES & TOOLS LIBRARIES**: Collections of policies used to identify and resolve ambiguities
+
+### Cognitive Plane
+- **Rule_APIS**: Interfaces for dynamically accessing and applying rules
+- **RegularExpressionExtractor**: Pattern matching to identify ambiguous terms
+- **CognitiveLoopManager**: Orchestrates the disambiguation workflow
+- **FacetsExtractor**: Applies the Four Facets Model to assess metadata completeness
+- **SemanticMapper**: Maps concepts across different representations
 
 ## License
 
