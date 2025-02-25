@@ -52,6 +52,79 @@ TrustLoop Protocol addresses a critical alignment problem at the intersection of
 
 When misalignments occur between these dimensions, organizations face regulatory non-compliance, security vulnerabilities, operational inefficiencies, and data privacy breaches.
 
+# TrustLoop in Action
+
+## Interactive Disambiguation
+
+![TrustLoop Demo App](disambiguate.png)
+
+TrustLoop's interactive disambiguation capabilities prevent semantic errors at their source. When users interact with data that has multiple potential interpretations, the system intercepts the query and prompts for clarification before executing.
+
+In this example, a financial data query containing the ambiguous term "revenue" is detected. Without clarification, this could lead to incorrect analysis as "revenue" might refer to either:
+- **Gross Revenue**: Revenue before deducting expenses
+- **Net Revenue**: Revenue after deducting expenses
+
+The system identifies this ambiguity, pauses execution, and prompts the user for clarification, ensuring accurate data retrieval and analysis.
+
+## Developer Workflow
+
+![TrustLoop Developer Tools](dev_workflow.png)
+
+The TrustLoop development framework implements a three-stage process to ensure semantic consistency:
+
+1. **IDENTIFY**: Sensors embedded in user interfaces detect potential ambiguities like "revenue" that could have multiple interpretations
+   
+2. **CONTROL**: Traffic management processes determine how to route queries:
+   - Red Light: Stop - Use predefined tools instead of AI
+   - Yellow Light: Caution - Verify intent with user ("Did you mean 'Gross' or 'Net' revenue?")
+   - Green Light: Proceed - Use AI with clarified intent
+
+3. **REMEMBER**: Create decision trails that document how semantic ambiguities were resolved, including the query context, user intent, data sources used, and computational costs
+
+This structured approach to semantic governance reduces errors at the source by clarifying intent before execution rather than attempting to correct misunderstandings afterward.
+
+## Pre-Processing vs. Post-Processing
+
+![TrustLoop Pre-Processing Model](processing.png)
+
+TrustLoop's fundamental innovation is shifting from post-processing to pre-processing for AI governance:
+
+### Without TrustLoop: Expensive & Hallucinating Post-Processing
+- Probabilistic AI systems attempt to predict how to handle queries after submission
+- LLMs must guess what tools, data, and compliance rules to apply
+- Errors are addressed after they occur, often requiring costly reprocessing
+
+### With TrustLoop: Controls & Transparent Pre-Processing
+- Deterministic rule manager evaluates queries before submission
+- Simple governance rules and responsible AI standards are built into the system
+- UX integration directly asks users "Is this what you meant?"
+- Clear decision matrix determines when to use AI versus existing infrastructure
+
+Pre-processing minimizes dependency on AI for tasks that can be handled more efficiently and accurately through deterministic processes, reducing both computational costs and error rates.
+
+## Compliance Benchmarking
+
+![TrustLoop Benchmarking](compliance.png)
+
+TrustLoop provides comprehensive tools for measuring AI compliance and semantic consistency:
+
+The benchmarking interface allows organizations to:
+- Evaluate query analytics across different AI models
+- Track response time, token usage, and estimated costs
+- Measure accuracy against established baselines
+- Identify semantic ambiguities in documents, user messages, and system responses
+- Maintain audit trails of disambiguation events
+
+In this example, the system is analyzing a management representation letter and has identified potentially ambiguous terms ("profit" and "revenue"). By catching these ambiguities early, TrustLoop prevents misinterpretation and ensures consistent understanding across human and AI systems.
+
+The query analytics panel provides operational metrics including:
+- Response time: 1699ms
+- Token usage: 765 tokens (input/output)
+- Estimated cost: $0.0067
+- Accuracy score: 33%
+
+This transparency allows organizations to optimize their AI governance processes while maintaining clear audit trails for compliance purposes.
+
 ## Architecture Components
 
 TrustLoop implements a split-plane architecture that separates system components into distinct operational layers:
