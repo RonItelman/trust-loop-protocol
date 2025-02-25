@@ -145,7 +145,7 @@ TrustLoop's interactive disambiguation approach demonstrates how deterministic r
 
 As shown in this demonstration, when a user types the keyword "post," the system:
 
-1. **Automatically detects** the predefined keyword from the intent.yaml configuration
+1. **Automatically detects** the predefined keyword from the intent.yaml or JSON-Schema or JSON configuration
 2. **Transforms plain text** into an interactive smart tag (highlighted in red)
 3. **Generates a structured decision tree** without requiring AI processing
 4. **Guides users through specific options** (platform selection, templates)
