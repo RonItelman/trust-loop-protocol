@@ -76,7 +76,7 @@ The system identifies this ambiguity, pauses execution, and prompts the user for
 
 ## Developer Workflow and Toolkit Development
 
-![TrustLoop Developer Toolkit Development](toolkit.jpg)
+![TrustLoop Developer Toolkit Development](tooklit.jpg)
 
 The TrustLoop development framework implements a three-stage process to ensure semantic consistency:
 
