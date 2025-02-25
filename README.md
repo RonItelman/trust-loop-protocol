@@ -66,9 +66,9 @@ In this example, a financial data query containing the ambiguous term "revenue" 
 
 The system identifies this ambiguity, pauses execution, and prompts the user for clarification, ensuring accurate data retrieval and analysis.
 
-## Developer Workflow
+## Developer Workflow and Toolkit Development
 
-![TrustLoop Developer Tools](dev.png)
+![TrustLoop Developer Toolkit Development](dev.jpg)
 
 The TrustLoop development framework implements a three-stage process to ensure semantic consistency:
 
