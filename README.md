@@ -164,6 +164,50 @@ TrustLoop's approach provides five fundamental mathematical guarantees:
 
 5. **Minimal Information Guarantee**: Through our path of least action principle, we can identify the minimal set of clarifications needed to resolve ambiguity in any given query.
 
+## Deterministic vs. Probabilistic Approaches
+
+TrustLoop differs fundamentally from other AI governance solutions by taking a deterministic approach rather than relying on probabilistic methods:
+
+### Probabilistic Approaches
+- Rely on statistical models to guess at meanings and relationships
+- Introduce their own uncertainty into the system
+- Cannot provide guarantees about semantic consistency
+- Often require significant computational resources
+
+### TrustLoop's Deterministic Approach
+- Uses explicit verification steps to validate semantic consistency
+- Maintains structured relationships between concepts with mathematical precision
+- Provides verifiable guarantees about semantic preservation
+- Requires minimal computational overhead
+
+This deterministic foundation makes TrustLoop especially valuable for regulated industries and high-stakes applications where approximate solutions are insufficient.
+
+## Implementation Components
+
+TrustLoop can be implemented using four core technical components:
+
+### 1. RegexRegistry
+A collection of regular expression patterns or fuzzy logic that defines keywords and phrases to monitor for ambiguity, such as "revenue".
+
+### 2. RulesRegistry
+An index of instructions to execute when matching patterns are detected, such as "if 'revenue' is detected, then ask the user whether they mean 'net' or 'gross'".
+
+### 3. QueryRecommender
+An optional AI component that can analyze queries, documents, data, or system responses to detect ambiguity and suggest rule updates.
+
+### 4. Cognitive Trails
+An audit trail system that tracks queries, information sources, actions, outcomes, and performance benchmarks.
+
+## Query Routing and Intelligence Traffic Control
+
+When a rule has been triggered, TrustLoop handles queries through a traffic light system:
+
+- **Green Light**: Query is optimized with no issues; proceed immediately
+- **Yellow Light**: Query requires feedback, warning, or clarification before proceeding
+- **Red Light**: Query cannot be sent as is and requires modification
+
+This "intelligence traffic cop" approach matches the state of queries, data sources, and system responses against rules before executing any API calls, ensuring semantic consistency throughout the process.
+
 ## Applications
 
 The TrustLoop Protocol can be applied to various domains including:
@@ -182,13 +226,148 @@ The TrustLoop Protocol is designed for flexible integration with specialized sof
 - **Middleware Approach**: TrustLoop functions as middleware between user interfaces and processing engines
 - **Integration Patterns**: The protocol supports multiple integration patterns (API intercepts, command-line preprocessing, workflow definitions, etc.)
 
+### Implementing the Four Facets Model
+
+Each facet can be defined and validated using separate JSON Schema definitions:
+
+#### 1. Data Facet Schema
+```json
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Data Facet",
+  "type": "object",
+  "properties": {
+    "fieldName": { "type": "string" },
+    "rawValue": { "type": ["string", "number", "boolean", "null"] }
+  },
+  "required": ["fieldName", "rawValue"]
+}
+```
+#### 2. Context Facet Schema
+```json
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Context Facet",
+  "type": "object",
+  "properties": {
+    "fieldName": { "type": "string" },
+    "businessPurpose": { "type": "string" },
+    "timePeriod": { "type": "string" },
+    "source": { "type": "string" }
+  },
+  "required": ["fieldName", "businessPurpose", "source"]
+}
+```
+#### 3. Meaning Facet Schema
+```json
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Meaning Facet",
+  "type": "object",
+  "properties": {
+    "fieldName": { "type": "string" },
+    "definition": { "type": "string" },
+    "formula": { "type": "string" },
+    "unit": { "type": "string" }
+  },
+  "required": ["fieldName", "definition"]
+}
+```
+#### 4. Structure Facet Schema
+```json
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Structure Facet",
+  "type": "object",
+  "properties": {
+    "fieldName": { "type": "string" },
+    "validationRules": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "required": ["fieldName", "validationRules"]
+}
+```
+
+### Measuring Metadata Completeness
+Here's an example of how to calculate metadata completeness across systems using the Four Facets Model:
+```python
+def calculate_ffm_completeness(system_metadata):
+    """
+    Calculate the Four Facets Model completeness score for a system
+    
+    Args:
+        system_metadata: Dictionary containing metadata for each facet
+        
+    Returns:
+        Dictionary with completeness metrics for each facet
+    """
+    results = {}
+    
+    # Context Facet - Count dimensions
+    if 'context' in system_metadata:
+        results['context'] = len(system_metadata['context'].keys())
+    else:
+        results['context'] = 0
+    
+    # Meaning Facet - Count entities and definitions
+    if 'meaning' in system_metadata:
+        entity_count = len(system_metadata['meaning'])
+        definition_count = sum(1 for entity in system_metadata['meaning'] 
+                              if 'definition' in entity)
+        results['meaning'] = [entity_count, definition_count]
+    else:
+        results['meaning'] = [0, 0]
+    
+    # Structure Facet - Calculate percentage of columns with constraints
+    if 'structure' in system_metadata and 'columns' in system_metadata:
+        total_columns = len(system_metadata['columns'])
+        columns_with_constraints = sum(1 for col in system_metadata['structure'] 
+                                      if len(col.get('validationRules', [])) > 0)
+        results['structure'] = columns_with_constraints / total_columns if total_columns > 0 else 0
+    else:
+        results['structure'] = 0
+    
+    # Data Facet - Count rows and columns
+    if 'data' in system_metadata:
+        row_count = len(system_metadata['data'])
+        column_count = len(system_metadata['columns']) if 'columns' in system_metadata else 0
+        results['data'] = [row_count, column_count]
+    else:
+        results['data'] = [0, 0]
+    
+    return results
+
+# Example usage
+general_ledger_metadata = {
+    'context': {'businessPurpose': 'Financial Reporting', 'timePeriod': 'Q4 2024', 'source': 'GL System'},
+    'meaning': [
+        {'fieldName': 'revenue', 'definition': 'Net revenue', 'formula': 'revenue - costs', 'unit': 'USD'},
+        # Additional 14 entities with definitions...
+    ],
+    'columns': ['id', 'date', 'account', 'amount', 'description', 'revenue'],
+    'structure': [
+        {'fieldName': 'revenue', 'validationRules': []}
+    ],
+    'data': [
+        # 1000 rows of data...
+    ]
+}
+
+completeness_score = calculate_ffm_completeness(general_ledger_metadata)
+print(completeness_score)
+# Output: {'context': 3, 'meaning': [15, 15], 'structure': 0, 'data': [1000, 6]}
+```
+
+This approach allows organizations to objectively measure the completeness of their metadata across different systems, identify gaps, and track improvements over time.
+For more information on implementing certification standards or obtaining a TrustLoop assessment for your organization, contact us for consulting and evaluation services.
+
 ## License
 
 TrustLoop Protocol core concepts are released under the [Apache License 2.0](LICENSE).
-
-## Contributing
-
-We welcome contributions to the TrustLoop Protocol. Please see our [Contributing Guidelines](CONTRIBUTING.md) for more information.
 
 ## Contact
 
