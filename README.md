@@ -1,4 +1,4 @@
-# TrustLoop Protocol
+# TrustLoop Protocol (Draft)
 
 ## An Industry Standard for AI Governance and Semantic Consistency
 
