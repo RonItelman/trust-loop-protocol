@@ -56,7 +56,7 @@ When misalignments occur between these dimensions, organizations face regulatory
 
 ## Interactive Disambiguation
 
-![TrustLoop Demo App](disambiguate.png)
+![TrustLoop Demo App](ambiguity.png)
 
 TrustLoop's interactive disambiguation capabilities prevent semantic errors at their source. When users interact with data that has multiple potential interpretations, the system intercepts the query and prompts for clarification before executing.
 
@@ -68,7 +68,7 @@ The system identifies this ambiguity, pauses execution, and prompts the user for
 
 ## Developer Workflow
 
-![TrustLoop Developer Tools](dev_workflow.png)
+![TrustLoop Developer Tools](dev.png)
 
 The TrustLoop development framework implements a three-stage process to ensure semantic consistency:
 
@@ -104,7 +104,7 @@ Pre-processing minimizes dependency on AI for tasks that can be handled more eff
 
 ## Compliance Benchmarking
 
-![TrustLoop Benchmarking](compliance.png)
+![TrustLoop Benchmarking](benchmarking.png)
 
 TrustLoop provides comprehensive tools for measuring AI compliance and semantic consistency:
 
