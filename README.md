@@ -192,4 +192,4 @@ We welcome contributions to the TrustLoop Protocol. Please see our [Contributing
 
 ## Contact
 
-For inquiries about implementation services, certification, or additional support, contact Ron Itelman [mailto:ron@ronitelman.com]
+For inquiries about implementation services, certification, or additional support, contact [Ron Itelman](mailto:ron@ronitelman.com)
