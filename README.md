@@ -137,6 +137,30 @@ The query analytics panel provides operational metrics including:
 
 This transparency allows organizations to optimize their AI governance processes while maintaining clear audit trails for compliance purposes.
 
+## Interactive Rule-Based Disambiguation
+
+![Interactive Disambiguation Demo](dialog.png)
+
+TrustLoop's interactive disambiguation approach demonstrates how deterministic rules can replace complex AI processing for many common tasks:
+
+As shown in this demonstration, when a user types the keyword "post," the system:
+
+1. **Automatically detects** the predefined keyword from the intent.yaml configuration
+2. **Transforms plain text** into an interactive smart tag (highlighted in red)
+3. **Generates a structured decision tree** without requiring AI processing
+4. **Guides users through specific options** (platform selection, templates)
+5. **Records all decisions** in a cognitive trail for compliance and auditing
+
+This approach provides significant advantages for enterprise environments:
+- **Leverages existing infrastructure** rather than requiring new vector databases or RAG systems
+- **Eliminates unnecessary AI processing costs** for straightforward, rule-based decisions
+- **Maintains complete control** over business logic and data access
+- **Creates transparent audit trails** showing exactly how decisions were made
+- **Reduces latency** by bypassing complex AI interpretation steps
+
+The visualization shows how even complex decision trees can be managed through simple, deterministic rules without requiring AI to interpret every user input or retrieve every database value.
+
+
 ## Architecture Components
 
 TrustLoop implements a split-plane architecture that separates system components into distinct operational layers:
