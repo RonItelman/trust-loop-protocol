@@ -6,6 +6,42 @@ TrustLoop Protocol is a compliance and optimization framework that defines stand
 
 ![TrustLoop Architecture](TL%20Architecture-split_plane.png)
 
+## The Alignment Problem
+
+### Measuring Semantic Alignment
+
+Organizations adopting AI systems face a fundamental challenge: ensuring alignment between human intent, organizational processes, and AI interpretation. Without a standardized way to measure this alignment, organizations cannot:
+
+- Validate that AI-generated outputs comply with regulatory requirements
+- Ensure consistent interpretation of business concepts across systems
+- Quantify and minimize uncertainty in AI-assisted processes
+- Compare and benchmark alignment across different implementations
+
+TrustLoop introduces the industry's first mathematical framework for measuring semantic alignment consistently across contexts. By establishing a universal reference frame (similar to how sea level serves as a reference for mountain heights), TrustLoop enables organizations to objectively measure, compare, and improve semantic consistency in AI systems.
+
+### Detecting and Resolving Ambiguity
+
+Ambiguity exists in three critical areas that must be addressed for reliable AI operation:
+
+1. **Query Ambiguity**: When a user asks "What is Q4 revenue?", does "revenue" mean gross revenue, net revenue, or another interpretation? Natural language is inherently ambiguous.
+
+2. **Source Data Ambiguity**: Table columns labeled simply "Revenue" without additional context create fundamental uncertainty about their meaning.
+
+3. **System Response Ambiguity**: Even when a system produces technically accurate results, ambiguous presentation can lead to misinterpretation.
+
+TrustLoop systematically identifies and resolves these ambiguities before they lead to errors, compliance violations, or misunderstandings. This pre-emptive approach eliminates uncertainty at its source rather than attempting to correct errors after they occur.
+
+### The Pre-Processing Advantage
+
+Unlike most AI governance approaches that focus on post-processing or probabilistic corrections, TrustLoop implements a fundamentally different pre-processing strategy:
+
+- **Query Optimization Before Execution**: TrustLoop intercepts queries before they reach AI systems, eliminating ambiguity through targeted clarification
+- **Deterministic Rule Application**: Simple, transparent rules detect known patterns of ambiguity rather than relying on complex probabilistic models
+- **Lightweight Integration**: The protocol operates primarily on metadata rather than the data itself, minimizing computational overhead
+- **Scalable Architecture**: Rule registries and pattern detection operate efficiently even at enterprise scale
+
+This approach provides mathematical guarantees about semantic consistency that probabilistic post-processing cannot match. By resolving ambiguity before processing rather than attempting to interpret or correct errors afterward, TrustLoop dramatically reduces the computational and compliance costs of AI operations.
+
 ## Core Concepts
 
 TrustLoop Protocol addresses a critical alignment problem at the intersection of three key dimensions:
@@ -66,6 +102,54 @@ Specifies validation rules and constraints. Examples include:
 
 The FFM creates a standardized way to measure completeness and identify gaps in data understanding, while providing a consistent reference frame for metadata across different systems and use cases.
 
+### Simple Example of the Four Facets Model (FFM)
+
+Consider a minimal dataset with one row and one column:
+
+**Table 1: Data Facet: Raw Data**
+
+| revenue → "Data Facet" |
+|------------------------|
+| 100                    |
+
+**Table 2: Context Facet: Business Purpose and Origin**
+
+| revenue → "Context Facet" | Value                      |
+|---------------------------|----------------------------|
+| Business purpose          | Quarterly financial reporting |
+| Time period              | Q4 2024                    |
+| Source                   | General Ledger             |
+
+**Table 3: Meaning Facet: Semantic Definition**
+
+| revenue → "Meaning Facet" | Value          |
+|---------------------------|----------------|
+| Definition                | Net revenue    |
+| Formula                   | revenue - costs |
+| Unit                      | USD            |
+
+**Table 4: Structure Facet: Validation Rules**
+
+| revenue → "Structure Facet" |
+|-----------------------------|
+| MUST not be blank           |
+| MUST have two decimal places |
+| MUST be a number            |
+
+**Table 5: Metadata Completeness Across Financial Data Sources**
+
+| Facet     | General Ledger | SEC Filings | CRM System | ERP System  |
+|-----------|----------------|-------------|------------|-------------|
+| Context   | 3              | 5           | 1          | 2           |
+| Meaning   | [15,15]        | [0,0]       | [0,0]      | [5,25]      |
+| Structure | 0              | 0           | 0          | 0.75        |
+| Data      | [1000, 150]    | [12, 300]   | [24,2521]  | [120520,592] |
+
+Context: Number of dimensions  
+Meaning: [number of entities, number of definitions]  
+Structure: Percentage of columns with constraints  
+Data: [number of rows, number of columns]
+
 ## Mathematical Guarantees
 
 TrustLoop's approach provides five fundamental mathematical guarantees:
@@ -108,4 +192,4 @@ We welcome contributions to the TrustLoop Protocol. Please see our [Contributing
 
 ## Contact
 
-For inquiries about implementation services, certification, or additional support, contact: [contact information]
+For inquiries about implementation services, certification, or additional support, contact Ron Itelman [mailto:ron@ronitelman.com]
