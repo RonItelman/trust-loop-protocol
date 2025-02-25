@@ -184,12 +184,16 @@ TrustLoop implements a split-plane architecture that separates system components
 - **FacetsExtractor**: Applies the Four Facets Model to assess metadata completeness
 - **SemanticMapper**: Maps concepts across different representations
 
-## The Four Facets Model (FFM)
+# Introducing "TrustScores": The Four Facets Model (FFM)
 
 The Four Facets Model provides a universal reference frame for measuring semantic consistency in AI-human interactions. It divides metadata into four distinct but interconnected aspects:
 
 ### Data Facet
 Shows the raw values of information. This is the actual content being processed.
+This includes:
+- Datasets (tabular, json, etc)
+- SQL (datasets of SQL statements)
+- Code (datasets of code snippets)
 
 ### Context Facet
 Provides business purpose and origin information. This includes:
@@ -259,7 +263,87 @@ Meaning: [number of entities, number of definitions]
 Structure: Percentage of columns with constraints  
 Data: [number of rows, number of columns]
 
-## Mathematical Guarantees
+# Expanding the Data Facet: Beyond Traditional Datasets
+
+## Information as Data: The Shannon Approach
+
+In alignment with Claude Shannon's information theory, "data" can be defined as any information or message in communication. This broader definition allows us to extend the Four Facets Model to include code registries, query cookbooks, and unstructured documents as legitimate forms of data.
+
+From this perspective:
+
+- **Code Registries** are collections of executable instructions that communicate processes to computers
+- **Query Cookbooks** are collections of optimized data requests that communicate intent to databases
+- **Unstructured Documents** are collections of natural language that communicate meaning to humans
+
+Each of these forms represents information being communicated between systems or between humans and systems. As such, they can all be conceptualized as "data" within the TrustLoop framework and subjected to the same Four Facets analysis.
+
+### Example: Code Snippet Through Four Facets
+
+**Table 1: Data Facet: Raw Code**
+
+| calculateNetRevenue → "Data Facet" |
+|-----------------------------------|
+| ```javascript function calculateNetRevenue(grossRevenue, costs) { return grossRevenue - costs; }``` |
+
+**Table 2: Context Facet: Business Purpose and Origin**
+
+| calculateNetRevenue → "Context Facet" | Value |
+|--------------------------------------|-------|
+| Business purpose | Financial calculation for quarterly reporting |
+| Usage timeframe | Implemented Q4 2024 |
+| Source | Finance department code repository |
+
+**Table 3: Meaning Facet: Semantic Definition**
+
+| calculateNetRevenue → "Meaning Facet" | Value |
+|--------------------------------------|-------|
+| Definition | Function that calculates net revenue from gross revenue and costs |
+| Input parameters | grossRevenue (USD), costs (USD) |
+| Output | Net revenue value in USD |
+
+**Table 4: Structure Facet: Validation Rules**
+
+| calculateNetRevenue → "Structure Facet" |
+|----------------------------------------|
+| MUST accept two numeric parameters |
+| MUST return a number |
+| MUST handle negative values correctly |
+
+### Example: SQL Query Through Four Facets
+
+**Table 5: Data Facet: Raw SQL Query**
+
+| quarterlyRevenueQuery → "Data Facet" |
+|-------------------------------------|
+| ```sql SELECT sum(amount) as revenue FROM transactions WHERE type='income' AND date BETWEEN '2024-10-01' AND '2024-12-31';``` |
+
+**Table 6: Context Facet: Business Purpose and Origin**
+
+| quarterlyRevenueQuery → "Context Facet" | Value |
+|----------------------------------------|-------|
+| Business purpose | Q4 revenue reporting |
+| Execution period | End of quarter processing |
+| Source | Financial reporting query library |
+
+**Table 7: Meaning Facet: Semantic Definition**
+
+| quarterlyRevenueQuery → "Meaning Facet" | Value |
+|----------------------------------------|-------|
+| Definition | Calculates gross revenue for Q4 2024 |
+| Data scope | All transaction records marked as income |
+| Unit | USD |
+
+**Table 8: Structure Facet: Validation Rules**
+
+| quarterlyRevenueQuery → "Structure Facet" |
+|------------------------------------------|
+| MUST return a single aggregate value |
+| MUST include date range parameters |
+| MUST filter only for income transactions |
+
+By applying the Four Facets Model to code and queries, organizations can achieve the same level of semantic clarity and governance that they apply to traditional data sources. This comprehensive approach ensures that all forms of information—whether structured data, executable code, or optimized queries—maintain semantic consistency throughout the enterprise.
+
+# Mathematical Guarantees
 
 TrustLoop's approach provides five fundamental mathematical guarantees:
 
