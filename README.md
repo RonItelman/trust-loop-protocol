@@ -8,8 +8,8 @@ TrustLoop Protocol is a compliance and optimization framework that defines stand
 
 ## The Challenge & Opportunity to Systematically Engineer Trust in Human-AI Collaboration
 
-<div align="left" width="50%">
-  <img src="8ball.png" alt="Trust in AI Systems" width="300">
+<div align="center" width="50%">
+  <img src="8ball.png" alt="Trust in AI Systems" width="50%">
 </div>
 
 At the heart of effective human-AI collaboration lies a fundamental question: "Can I trust you?" As illustrated by the uncertain magic 8-ball response, traditional AI systems cannot provide a satisfying answer to this question. The challenge isn't merely technical—it's epistemological. Without a structured framework for measuring semantic alignment, organizations cannot verify that AI systems truly understand human intent or organizational requirements. This trust gap creates significant business risks, from compliance violations to costly operational errors. TrustLoop Protocol transforms this challenge into an opportunity by establishing a deterministic framework that makes trust measurable, verifiable, and systematically engineered. Rather than relying on probabilistic guesswork, TrustLoop introduces mathematical guarantees and transparent governance mechanisms that allow organizations to confidently answer "yes" when asked if their AI systems can be trusted to maintain semantic consistency across contexts.
@@ -76,7 +76,9 @@ The system identifies this ambiguity, pauses execution, and prompts the user for
 
 ## Developer Workflow and Toolkit Development
 
-![TrustLoop Developer Toolkit Development](tooklit.jpg)
+<div align="center" width="50%">
+  <img src="tooklit.jpg" alt="Trust in AI Systems" width="50%">
+</div>
 
 The TrustLoop development framework implements a three-stage process to ensure semantic consistency:
 
@@ -93,7 +95,9 @@ This structured approach to semantic governance reduces errors at the source by 
 
 ## Pre-Processing vs. Post-Processing
 
-![TrustLoop Pre-Processing Model](processing.png)
+<div align="center" width="50%">
+  <img src="processing.png" alt="Trust in AI Systems" width="50%">
+</div>
 
 TrustLoop's fundamental innovation is shifting from post-processing to pre-processing for AI governance:
 
