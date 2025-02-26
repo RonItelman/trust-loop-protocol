@@ -1,6 +1,6 @@
 # TrustLoop Protocol (Draft)
 
-## An Industry Standard for Compliant, Safe, and Secure Human + AI Co-Pilot Systems
+## The Industry Standard for Measuring and Certifying Human+AI Co-Pilot Systems
 
 TrustLoop Protocol is a compliance and optimization framework that defines standards organizations need to follow to minimize AI costs and maximize AI accuracy. At its core, the protocol enforces feedback loops that identify and warn of potential issues across data, code, and ontologies before they reach production environments.
 
