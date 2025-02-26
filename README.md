@@ -4,11 +4,18 @@
 
 TrustLoop Protocol is a compliance and optimization framework that defines standards organizations need to follow to minimize AI costs and maximize AI accuracy. At its core, the protocol enforces feedback loops that identify and warn of potential issues across data, code, and ontologies before they reach production environments.
 
-### The Need for Certification of Human+AI Co-Pilot Systems
+<figure align="center">
+  <img src="8ball.png" alt="Trust in AI Systems" width="50%">
+  <i>At the heart of effective human-AI collaboration lies a fundamental question: "Can I trust you?" As illustrated by the uncertain magic 8-ball response, traditional AI systems cannot provide a satisfying answer to this question. The challenge isn't merely technical—it's foundational to a business, especially those with regulatory requirements. Errors compound downstream and broken trust derails efficiencies and introduces unknown risks. </i>
+</figure>
+
+Without a structured framework for measuring semantic alignment, organizations cannot verify that AI systems truly understand human intent or organizational requirements. This trust gap creates significant business risks, from compliance violations to costly operational errors. TrustLoop Protocol transforms this challenge into an opportunity by establishing a deterministic framework that makes trust measurable, verifiable, and systematically engineered. Rather than relying on probabilistic guesswork, TrustLoop introduces mathematical guarantees and transparent governance mechanisms that allow organizations to confidently answer "yes" when asked if their AI systems can be trusted to maintain semantic consistency across contexts.
+
+## The Need for Certification of Human+AI Co-Pilot Systems
 
 Just as aircraft pilots require rigorous certification before flying commercial aircraft, Human+AI co-pilot systems demand similar levels of verification before deployment in mission-critical enterprise environments. When a pilot enters a cockpit, regulatory authorities have established clear standards for training, testing, and ongoing assessment that provide mathematical guarantees of safety. Yet when organizations deploy AI co-pilots to navigate complex data ecosystems and support critical business decisions, no equivalent certification standards exist to verify these systems are safe, effective, and auditable. The TrustLoop Protocol establishes this missing certification framework by defining measurable criteria for semantic consistency, ambiguity detection, and decision transparency. Organizations can now objectively answer critical questions about their AI implementations: Are these systems correctly interpreting business terminology across contexts? Can they detect and resolve semantic ambiguities before they cause errors? Do they maintain comprehensive audit trails that explain how decisions were reached? Through the Four Facets Model and deterministic rule application, TrustLoop provides the industry's first comprehensive certification approach for Human+AI systems, ensuring these digital co-pilots are as rigorously verified as their aviation counterparts.
 
-The Certification Framework:
+
 
 ### Standardized assessment for semantic strategies
 Whether you use relational tables, knowledge graphs, ontologies, etc., TrustLoop Protocol gives a checklist approach to measure the completness and compatibility of your metadata and UI integrations in workflows to measure the efficiency, efficicacy, and reliability of Human+AI Co-Pilot Systems.
@@ -32,13 +39,8 @@ This dual approach ensures organizations can both evaluate existing systems and 
   <figcaption><i>Figure 1: TrustLoop Architecture - Reference implementation model for building certified Human+AI Co-Pilot systems. This architecture diagram serves as a core component of the TrustLoop implementation playbook, illustrating the recommended split-plane approach for separating control, data, and cognitive layers.</i></figcaption>
 </figure>
 
-### Engineering Trust in Human-AI Collaboration
 
-<div align="center" width="50%">
-  <img src="8ball.png" alt="Trust in AI Systems" width="50%">
-</div>
 
-At the heart of effective human-AI collaboration lies a fundamental question: "Can I trust you?" As illustrated by the uncertain magic 8-ball response, traditional AI systems cannot provide a satisfying answer to this question. The challenge isn't merely technical—it's epistemological. Without a structured framework for measuring semantic alignment, organizations cannot verify that AI systems truly understand human intent or organizational requirements. This trust gap creates significant business risks, from compliance violations to costly operational errors. TrustLoop Protocol transforms this challenge into an opportunity by establishing a deterministic framework that makes trust measurable, verifiable, and systematically engineered. Rather than relying on probabilistic guesswork, TrustLoop introduces mathematical guarantees and transparent governance mechanisms that allow organizations to confidently answer "yes" when asked if their AI systems can be trusted to maintain semantic consistency across contexts.
 
 
 
