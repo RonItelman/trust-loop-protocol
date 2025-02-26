@@ -25,6 +25,12 @@ Whether you use relational tables, knowledge graphs, ontologies, etc., TrustLoop
 - Compliance verification for regulated industries
 - Audit trails that document decision processes
 
+<div>
+  <img src="ide.jpg" alt="Trust in AI Systems" width="50%" align="left" hspace="20">
+  <p><small><i>The first step is understanding what exactly is measured and standardizing assessments, so that you can improve your metadata management and measure the enhancements to the trust of your Human+AI Co-Pilot Systems.</i></small></p>
+</div>
+<br clear="all"><br>
+
 ### The Implementation Playbook:
 The Playbook can be implemented in any language / stack, it is a step-by-step guide to how to design, architect, and integrate a TrustLoop Protocol system in your organization.
 - Reference architectures for integrating the protocol
