@@ -4,13 +4,11 @@
 
 TrustLoop Protocol is a compliance and optimization framework that defines standards organizations need to follow to minimize AI costs and maximize AI accuracy. At its core, the protocol enforces feedback loops that identify and warn of potential issues across data, code, and ontologies before they reach production environments.
 
-
-<table>
-  <tr>
-    <td style="width:60%"><img src="8ball.png" alt="Trust in AI Systems" style="width:100%;"></td>
-    <td style="width:40%"><i style="font-size:10px;">At the heart of effective human-AI collaboration lies a fundamental question: "Can I trust you?" As illustrated by the uncertain magic 8-ball response, traditional AI systems cannot provide a satisfying answer to this question. The challenge isn't merely technical—it's foundational to a business, especially those with regulatory requirements. Errors compound downstream and broken trust derails efficiencies and introduces unknown risks.</i></td>
-  </tr>
-</table>
+<div>
+  <img src="8ball.png" alt="Trust in AI Systems" width="50%" align="left" hspace="20">
+  <p><small><i>At the heart of effective human-AI collaboration lies a fundamental question: "Can I trust you?" As illustrated by the uncertain magic 8-ball response, traditional AI systems cannot provide a satisfying answer to this question. The challenge isn't merely technical—it's foundational to a business, especially those with regulatory requirements. Errors compound downstream and broken trust derails efficiencies and introduces unknown risks.</i></small></p>
+</div>
+<br clear="all"><br>
 
 Without a structured framework for measuring semantic alignment, organizations cannot verify that AI systems truly understand human intent or organizational requirements. This trust gap creates significant business risks, from compliance violations to costly operational errors. TrustLoop Protocol transforms this challenge into an opportunity by establishing a deterministic framework that makes trust measurable, verifiable, and systematically engineered. Rather than relying on probabilistic guesswork, TrustLoop introduces mathematical guarantees and transparent governance mechanisms that allow organizations to confidently answer "yes" when asked if their AI systems can be trusted to maintain semantic consistency across contexts.
 
@@ -110,12 +108,13 @@ The system identifies this ambiguity, pauses execution, and prompts the user for
 ## User Workflows: Toolkit Development
 Companies that adopt the TrustLoop Protocol systems are required to develop toolkits (code libraries, etc) to embed directly in user workflows using a simple "traffic controller" approach. This pre-processing control guarantee means that you can prevent unecessary queries from reaching expensive AI systems that might return unreliable results, approve a query as "ready" to send to AI, and prevent queries from reaching AI. 
 
-
-
-<div align="center" width="50%">
-  <img src="tooklit.jpg" alt="Trust in AI Systems" width="50%">
-  <i>Tools in this manner are triggered before AI as opposed to post-processing where the AI selects a tool. TrustLoop systems can still use post-processing as a hybrid.</i>
+<div>
+  <img src="tooklit.jpg" alt="Trust in AI Systems" width="50%" align="left" hspace="20">
+  <p><small><i>Tools in this manner are triggered before AI as opposed to post-processing where the AI selects a tool. TrustLoop systems can still use post-processing as a hybrid.</i></small></p>
 </div>
+<br clear="all"><br>
+
+
 
 The TrustLoop development framework implements a three-stage process to ensure semantic consistency:
 
@@ -132,11 +131,14 @@ This structured approach to semantic governance reduces errors at the source by 
 
 ## Pre-Processing vs. Post-Processing
 
-<div align="center" width="50%">
-  <img src="processing.png" alt="Trust in AI Systems" width="50%">
+<div>
+  <img src="processing.png" alt="Trust in AI Systems" width="50%" align="left" hspace="20">
+  <p><small><i>TrustLoop's fundamental innovation is shifting from post-processing to pre-processing for AI governance.</i></small></p>
 </div>
+<br clear="all"><br>
 
-TrustLoop's fundamental innovation is shifting from post-processing to pre-processing for AI governance:
+
+
 
 ### Without TrustLoop: Expensive & Hallucinating Post-Processing
 - Probabilistic AI systems attempt to predict how to handle queries after submission
