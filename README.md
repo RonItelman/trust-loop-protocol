@@ -107,10 +107,14 @@ In this example, a financial data query containing the ambiguous term "revenue" 
 
 The system identifies this ambiguity, pauses execution, and prompts the user for clarification, ensuring accurate data retrieval and analysis.
 
-## Developer Workflow and Toolkit Development
+## User Workflows: Toolkit Development
+Companies that adopt the TrustLoop Protocol systems are required to develop toolkits (code libraries, etc) to embed directly in user workflows using a simple "traffic controller" approach. This pre-processing control guarantee means that you can prevent unecessary queries from reaching expensive AI systems that might return unreliable results, approve a query as "ready" to send to AI, and prevent queries from reaching AI. 
+
+
 
 <div align="center" width="50%">
   <img src="tooklit.jpg" alt="Trust in AI Systems" width="50%">
+  <i>Tools in this manner are triggered before AI as opposed to post-processing where the AI selects a tool. TrustLoop systems can still use post-processing as a hybrid.</i>
 </div>
 
 The TrustLoop development framework implements a three-stage process to ensure semantic consistency:
