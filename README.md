@@ -4,10 +4,13 @@
 
 TrustLoop Protocol is a compliance and optimization framework that defines standards organizations need to follow to minimize AI costs and maximize AI accuracy. At its core, the protocol enforces feedback loops that identify and warn of potential issues across data, code, and ontologies before they reach production environments.
 
-<figure align="center">
-  <img src="8ball.png" alt="Trust in AI Systems" width="50%">
-  <i>At the heart of effective human-AI collaboration lies a fundamental question: "Can I trust you?" As illustrated by the uncertain magic 8-ball response, traditional AI systems cannot provide a satisfying answer to this question. The challenge isn't merely technical—it's foundational to a business, especially those with regulatory requirements. Errors compound downstream and broken trust derails efficiencies and introduces unknown risks. </i>
-</figure>
+
+<table>
+  <tr>
+    <td style="width:60%"><img src="8ball.png" alt="Trust in AI Systems" style="width:100%;"></td>
+    <td style="width:40%"><i style="font-size:10px;">At the heart of effective human-AI collaboration lies a fundamental question: "Can I trust you?" As illustrated by the uncertain magic 8-ball response, traditional AI systems cannot provide a satisfying answer to this question. The challenge isn't merely technical—it's foundational to a business, especially those with regulatory requirements. Errors compound downstream and broken trust derails efficiencies and introduces unknown risks.</i></td>
+  </tr>
+</table>
 
 Without a structured framework for measuring semantic alignment, organizations cannot verify that AI systems truly understand human intent or organizational requirements. This trust gap creates significant business risks, from compliance violations to costly operational errors. TrustLoop Protocol transforms this challenge into an opportunity by establishing a deterministic framework that makes trust measurable, verifiable, and systematically engineered. Rather than relying on probabilistic guesswork, TrustLoop introduces mathematical guarantees and transparent governance mechanisms that allow organizations to confidently answer "yes" when asked if their AI systems can be trusted to maintain semantic consistency across contexts.
 
