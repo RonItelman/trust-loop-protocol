@@ -24,7 +24,10 @@ The Certification Framework:
 
 This dual approach ensures organizations can both evaluate existing systems and design new implementations that will pass certification, creating a complete solution for engineering trust into Human+AI co-pilot systems.
 
-![TrustLoop Architecture](TL%20Architecture-split_plane.png)
+<figure>
+  <img src="TL%20Architecture-split_plane.png" alt="TrustLoop Architecture">
+  <figcaption>Figure 1: TrustLoop Architecture - Reference implementation model for building certified Human+AI Co-Pilot systems. This architecture diagram serves as a core component of the TrustLoop implementation playbook, illustrating the recommended split-plane approach for separating control, data, and cognitive layers.</figcaption>
+</figure>
 
 ## The Challenge & Opportunity to Systematically Engineer Trust in Human-AI Collaboration
 
