@@ -358,19 +358,19 @@ Each of these forms represents information being communicated between systems or
 
 By applying the Four Facets Model to code and queries, organizations can achieve the same level of semantic clarity and governance that they apply to traditional data sources. This comprehensive approach ensures that all forms of information—whether structured data, executable code, or optimized queries—maintain semantic consistency throughout the enterprise.
 
-# Mathematical Guarantees
+## Mathematical Foundations
 
-TrustLoop's approach provides five fundamental mathematical guarantees:
+TrustLoop's approach is built on five fundamental mathematical principles:
 
-1. **Completeness Guarantee**: The FFM ensures that for any piece of enterprise data, we can definitively determine the presence or absence of critical metadata.
+1. **Completeness Measurement**: The FFM provides a standardized gauge to measure the presence or absence of critical metadata across all four facets.
 
-2. **Consistency Guarantee**: Our gauge-theoretic approach to semantic mapping ensures that when relationships between concepts are established, they remain consistent across all contexts.
+2. **Consistency Framework**: Our approach to semantic mapping establishes a reference field where relationships between concepts can be evaluated consistently across contexts.
 
-3. **Uncertainty Quantification Guarantee**: TrustLoop provides a deterministic way to measure existing uncertainty in data systems.
+3. **Uncertainty Quantification**: TrustLoop offers a deterministic method to measure and characterize existing uncertainty in data systems.
 
-4. **Compositional Guarantee**: When combining data from different sources, our framework provides a deterministic way to verify semantic compatibility.
+4. **Compositional Assessment**: When combining data from different sources, our framework applies Jaccard similarity metrics to evaluate semantic compatibility between elements.
 
-5. **Minimal Information Guarantee**: Through our path of least action principle, we can identify the minimal set of clarifications needed to resolve ambiguity in any given query.
+5. **Information Economy Principle**: By analyzing gaps across the four facets, we can identify the minimal set of clarifications needed to resolve ambiguity in a given query.
 
 ## Deterministic vs. Probabilistic Approaches
 
@@ -391,7 +391,15 @@ TrustLoop differs fundamentally from other AI governance solutions by taking a d
 This deterministic foundation makes TrustLoop especially valuable for regulated industries and high-stakes applications where approximate solutions are insufficient.
 
 ## Theoretical Foundations: Metadata Lattice Structure
-From a theoretical perspective, TrustLoop establishes a formal guarantee for the "shape" of metadata by creating a well-defined lattice structure. This lattice provides a universal and general gauge for measuring knowledge representation across both human and AI systems. By mapping metadata to this structured lattice through the Four Facets Model, we transform what was previously an undefined space of potential interpretations into a measurable and verifiable domain. This mathematical foundation allows us to precisely quantify semantic consistency, detect ambiguity, and establish verification mechanisms across the entire human-AI interaction lifecycle. The lattice structure creates a rigorous framework for certification of Secure Human+AI Co-Pilot Systems, enabling organizations to validate that their AI implementations maintain consistent semantic meaning across all contexts. This theoretical approach bridges abstract knowledge representation with practical implementation guarantees, ensuring safe and reliable AI operations in high-stakes environments.
+From a theoretical perspective, TrustLoop establishes a standardized framework for the "shape" of metadata by creating a well-defined lattice structure. This lattice serves as a universal reference gauge for measuring knowledge representation across both human and AI systems. 
+
+By mapping metadata to this structured lattice through the Four Facets Model, we transform what was previously an undefined space of potential interpretations into a measurable and comparable domain. This mathematical foundation enables organizations to:
+
+1. Quantify semantic consistency using standardized metrics
+2. Detect ambiguity through pattern recognition across the lattice
+3. Establish verification mechanisms with clear evaluation criteria
+
+The lattice structure provides a systematic framework for certification of Human+AI Co-Pilot Systems, offering organizations a consistent method to evaluate whether their AI implementations maintain semantic coherence across contexts. This approach bridges abstract knowledge representation with practical implementation assessments, supporting more reliable AI operations in high-stakes environments.
 
 ## Implementation Components
 
@@ -620,9 +628,9 @@ Where:
 
 ### Measuring Semantic Compatibility Step-by-Step
 
-To determine if two data elements can be meaningfully joined, we calculate their semantic compatibility using set operations:
+To evaluate if two data elements can be meaningfully joined, we apply Jaccard similarity principles to measure their semantic compatibility:
 
-1. **Retrieve the semantic representations** of both elements (constant time operation):
+1. **Retrieve the semantic representations** of both elements:
    - S(e1) = (D1, C1, M1, T1)
    - S(e2) = (D2, C2, M2, T2)
 
@@ -638,14 +646,22 @@ To determine if two data elements can be meaningfully joined, we calculate their
    - M_union = M1 ∪ M2 (all meaning attributes)
    - T_union = T1 ∪ T2 (all structural rules)
 
-4. **Calculate overall compatibility** as the ratio of intersection to union:
-   - Compatibility(e1, e2) = |S(e1) ∩ S(e2)| / |S(e1) ∪ S(e2)|
+4. **Calculate facet-specific compatibility using Jaccard similarity**:
+   - Compatibility_D = |D_intersection| / |D_union| (if |D_union| > 0, else 1)
+   - Compatibility_C = |C_intersection| / |C_union| (if |C_union| > 0, else 1)
+   - Compatibility_M = |M_intersection| / |M_union| (if |M_union| > 0, else 0)
+   - Compatibility_T = |T_intersection| / |T_union| (if |T_union| > 0, else 1)
 
-5. **Apply decision criteria** based on compatibility score:
+5. **Calculate weighted overall compatibility**:
+   - Overall_Compatibility = (0.1*Compatibility_D + 0.2*Compatibility_C + 0.5*Compatibility_M + 0.2*Compatibility_T)
+   
+   *Note: Weights reflect the higher importance of meaning compatibility*
+
+6. **Apply decision criteria** based on compatibility score:
    - High compatibility (≥ 0.7): Safe to join
    - Medium compatibility (0.4-0.7): Requires review
    - Low compatibility (< 0.4): Not recommended to join
-   - Zero meaning compatibility (M_intersection = ∅): Critical semantic conflict
+   - Zero meaning compatibility (Compatibility_M = 0): Critical semantic conflict
 
 ### Importance for Auto-Join Systems
 
