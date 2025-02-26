@@ -607,6 +607,98 @@ TrustLoop implements a split-plane architecture that separates system components
 - **CognitiveLoopManager**: Orchestrates the disambiguation workflow
 - **FacetsExtractor**: Applies the Four Facets Model to assess metadata completeness
 - **SemanticMapper**: Maps concepts across different representations
+  
+## TrustLoop Protocol for Coding in the IDE with VSCode
+
+The TrustLoop Protocol brings organizational policy compliance directly into the developer workflow through IDE integration. This implementation demonstrates how TrustLoop can prevent compliance violations and security issues before they reach production environments by providing real-time feedback during coding.
+
+### The Pre-Processing Advantage in Code Development
+
+Unlike traditional post-deployment security scanning, TrustLoop leverages a pre-processing approach that identifies potential issues while developers are still writing code. This implementation follows the core TrustLoop principles:
+
+1. **IDENTIFY**: Pattern recognition detects potentially problematic code patterns
+2. **CONTROL**: Traffic light system categorizes issues as errors (red), warnings (yellow), or compliant (green)
+3. **REMEMBER**: Creates cognitive trails linking code decisions to organizational policies
+
+### VSCode Implementation Architecture
+
+A TrustLoop VSCode extension would consist of the following components:
+
+#### 1. Policy Registry
+- JSON-based representation of organizational policies
+- Support for multiple policy domains (security, privacy, compliance, etc.)
+- Version control integration for policy updates
+
+#### 2. Code Analysis Engine
+- Real-time syntax and semantic analysis
+- Pattern matching against RegexRegistry
+- Contextual awareness for infrastructure-as-code files
+
+#### 3. Interactive UI Components
+- Inline error/warning indicators
+- Policy reference panels with remediation guidance
+- Exception workflow integration
+
+### Example: Infrastructure-as-Code Governance
+
+When an infrastructure engineer writes Terraform code that violates organizational security policies, TrustLoop provides immediate feedback:
+
+```terraform
+resource "aws_security_group" "example" {
+  name        = "example-sg"
+  description = "Security group allowing RDP, HTTP, and HTTPS access"
+ 
+  # Allow RDP (Port 3389)
+  ingress {
+    from_port   = 3389    // ❌ RED: Violation of security policy 
+    to_port     = 3389
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+ 
+  # Allow HTTP (Port 80)
+  ingress {
+    from_port   = 80      // ⚠️ YELLOW: Permitted only for HTTPS redirection
+    to_port     = 80
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+}
+```
+
+The developer receives:
+- **Error alert** for RDP port exposure (violation of security policy)
+- **Warning notification** for HTTP port configuration
+- **Remediation guidance** with policy reference and exception workflow
+
+### Four Facets Model Applied to Code
+
+The TrustLoop IDE integration applies the Four Facets Model to code:
+
+1. **Data Facet**: The actual code being written (the syntax and structure)
+2. **Context Facet**: Project metadata, deployment environment, business purpose
+3. **Meaning Facet**: Semantic interpretation of code constructs and their implications
+4. **Structure Facet**: Validation rules and constraints from policies and best practices
+
+### Implementation Benefits
+
+1. **Shift-Left Security**: Catches policy violations during development instead of during security reviews
+2. **Reduced Exception Processing**: Decreases the volume of security exception requests
+3. **Knowledge Transfer**: Educates developers about security policies through contextual examples
+4. **Audit Readiness**: Creates documentation trails linking code decisions to organizational policies
+5. **Accelerated Development**: Reduces time lost to security review iterations
+
+### Getting Started with TrustLoop for VSCode
+
+Organizations implementing TrustLoop Protocol for VSCode would:
+
+1. Define policy registries using JSON Schema structures
+2. Develop regular expression patterns for code analysis
+3. Implement rule application logic for specific languages/frameworks
+4. Create UI components for developer interaction
+5. Establish logging mechanisms for compliance audit trails
+
+This implementation demonstrates how TrustLoop's pre-processing approach to semantic consistency can be applied directly within development environments, creating a more efficient path to secure, compliant code.
 
 ## Theoretical Future Exploration
 
