@@ -26,7 +26,7 @@ Whether you use relational tables, knowledge graphs, ontologies, etc., TrustLoop
 - Audit trails that document decision processes
 
 <div>
-  <img src="ide.jpg" alt="Trust in AI Systems" width="50%" align="left" hspace="20">
+  <img src="TrustScore.png" alt="Trust in AI Systems" width="50%" align="left" hspace="20">
   <p><small><i>The first step is understanding what exactly is measured and standardizing assessments, so that you can improve your metadata management and measure the enhancements to the trust of your Human+AI Co-Pilot Systems.</i></small></p>
 </div>
 <br clear="all"><br>
@@ -625,6 +625,12 @@ Unlike traditional post-deployment security scanning, TrustLoop leverages a pre-
 1. **IDENTIFY**: Pattern recognition detects potentially problematic code patterns
 2. **CONTROL**: Traffic light system categorizes issues as errors (red), warnings (yellow), or compliant (green)
 3. **REMEMBER**: Creates cognitive trails linking code decisions to organizational policies
+   
+<div>
+  <img src="ide.jpg" alt="Trust in AI Systems" width="50%" align="left" hspace="20">
+  <p><small><i>As TrustLoop is a protocol, you can apply it and measure any part of your organization's digital ecosystem, including in IDE developer use-cases, to support and measure the trustworthiness of your Human+AI Co-Pilot Systems.</i></small></p>
+</div>
+<br clear="all"><br>
 
 ### VSCode Implementation Architecture
 
